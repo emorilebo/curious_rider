@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "189301383215",
+    "project_id": "enginefinder-e686d",
+    "storage_bucket": "enginefinder-e686d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189301383215:android:58a1e73b711277244ca6da",
+        "android_client_info": {
+          "package_name": "com.cruxifixur.ridersapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189301383215-thtuu76rqrsjruoeg81t28fkth2i8coe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYs58aaAYB-W8Ag6DSMcTgN1zrTvNn-7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189301383215-thtuu76rqrsjruoeg81t28fkth2i8coe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189301383215:android:eed0ca6b34bbbce54ca6da",
+        "android_client_info": {
+          "package_name": "com.cruxifixur.sellerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189301383215-thtuu76rqrsjruoeg81t28fkth2i8coe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYs58aaAYB-W8Ag6DSMcTgN1zrTvNn-7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189301383215-thtuu76rqrsjruoeg81t28fkth2i8coe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
