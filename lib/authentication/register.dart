@@ -107,7 +107,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           String fileName = DateTime.now().millisecondsSinceEpoch.toString();
           fStorage.Reference reference = fStorage.FirebaseStorage.instance
               .ref()
-              .child("sellers")
+              .child("riders")
               .child(fileName);
           fStorage.UploadTask uploadTask =
               reference.putFile(File(imageXFile!.path));
@@ -299,7 +299,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 formValidation();
               },
               child: const Text(
-                "Sign Up as an Engineer",
+                "Sign Up",
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
