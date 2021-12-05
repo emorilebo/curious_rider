@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:curious_rider/authentication/auth_screen.dart';
 import 'package:curious_rider/global/global.dart';
 import 'package:flutter/material.dart';
 
@@ -17,8 +18,8 @@ class _MySplashScreenState extends State<MySplashScreen> {
         // Navigator.push(
         //     context, MaterialPageRoute(builder: (c) => const HomeScreen()));
       } else {
-        // Navigator.push(
-        //     context, MaterialPageRoute(builder: (c) => const AuthScreen()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (c) => const AuthScreen()));
       }
     });
   }

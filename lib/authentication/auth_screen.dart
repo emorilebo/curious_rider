@@ -20,8 +20,8 @@ class _AuthScreenState extends State<AuthScreen> {
               decoration: const BoxDecoration(
                   gradient: LinearGradient(
                 colors: [
-                  Colors.cyan,
                   Colors.amber,
+                  Colors.cyan,
                 ],
                 begin: FractionalOffset(0.0, 0.0),
                 end: FractionalOffset(1.0, 0.0),
@@ -31,11 +31,12 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             automaticallyImplyLeading: false,
             title: const Text(
-              "iEngineer",
+              "iRider",
               style: TextStyle(
                 fontSize: 35,
                 color: Colors.white,
-                fontFamily: "Lobster",
+                fontFamily: "Signatra",
+                letterSpacing: 6,
               ),
             ),
             centerTitle: true,

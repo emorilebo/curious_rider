@@ -175,11 +175,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   Future saveDataToFirestore(User currentUser) async {
-    FirebaseFirestore.instance.collection("sellers").doc(currentUser.uid).set({
-      "sellerUID": currentUser.uid,
-      "sellerEmail": currentUser.email,
-      "sellerName": nameController.text.trim(),
-      "sellerAvatarUrl": sellerImageUrl,
+    FirebaseFirestore.instance.collection("riders").doc(currentUser.uid).set({
+      "riderUID": currentUser.uid,
+      "riderEmail": currentUser.email,
+      "riderName": nameController.text.trim(),
+      "riderAvatarUrl": sellerImageUrl,
       "phone": phoneController.text.trim(),
       "address": completeAddress,
       "status": "approved",
@@ -264,7 +264,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   CustomTextField(
                     data: Icons.my_location,
                     controller: locationController,
-                    hintText: "Work or Home Address",
+                    hintText: "Current Address",
                     isObscure: false,
                     enabled: true,
                   ),
@@ -278,7 +278,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                       icon: const Icon(Icons.location_on, color: Colors.white),
                       label: const Text(
-                        "Get my location",
+                        "Get my current location",
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
