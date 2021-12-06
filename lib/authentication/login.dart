@@ -1,10 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:curious_rider/global/global.dart';
+import 'package:curious_rider/mainScreens/home_screen.dart';
 import 'package:curious_rider/widgets/error_dialog.dart';
 import 'package:curious_rider/widgets/loading_dialog.dart';
 import 'package:curious_rider/widgets/custom_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'auth_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -63,11 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     });
     if (currentUser != null) {
-      readDataAndSetDataLocally(currentUser!).then((value) {
-        Navigator.pop(context);
-        // Navigator.push(
-        //     context, MaterialPageRoute(builder: (c) => const HomeScreen()));
-      });
+      readDataAndSetDataLocally(currentUser!);
     }
   }
 
@@ -77,12 +76,29 @@ class _LoginScreenState extends State<LoginScreen> {
         .doc(currentUser.uid)
         .get()
         .then((snapshot) async {
-      await sharedPreferences!.setString("uid", currentUser.uid);
-      await sharedPreferences!
-          .setString("email", snapshot.data()!["riderEmail"]);
-      await sharedPreferences!.setString("name", snapshot.data()!["riderName"]);
-      await sharedPreferences!
-          .setString("photoUrl", snapshot.data()!["riderAvatarUrl"]);
+      if (snapshot.exists) {
+        await sharedPreferences!.setString("uid", currentUser.uid);
+        await sharedPreferences!
+            .setString("email", snapshot.data()!["riderEmail"]);
+        await sharedPreferences!
+            .setString("name", snapshot.data()!["riderName"]);
+        await sharedPreferences!
+            .setString("photoUrl", snapshot.data()!["riderAvatarUrl"]);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (c) => const HomeScreen()));
+      } else {
+        firebaseAuth.signOut();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (c) => const AuthScreen()));
+        showDialog(
+          context: context,
+          builder: (c) {
+            return ErrorDialog(
+              message: "No record exists. Try Signing Up as a Rider",
+            );
+          },
+        );
+      }
     });
   }
 
@@ -131,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 formValidation();
               },
               child: const Text(
-                "Login as an Engineer",
+                "Login as a Rider",
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),

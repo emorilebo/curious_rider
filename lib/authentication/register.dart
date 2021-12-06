@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:curious_rider/global/global.dart';
+import 'package:curious_rider/mainScreens/home_screen.dart';
 import 'package:curious_rider/widgets/error_dialog.dart';
 import 'package:curious_rider/widgets/loading_dialog.dart';
 import 'package:curious_rider/widgets/custom_text_field.dart';
@@ -168,8 +169,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       saveDataToFirestore(currentUser!).then((value) {
         Navigator.pop(context);
         //send the user to homepage
-        // Route newRoute = MaterialPageRoute(builder: (c) => const HomeScreen());
-        //Navigator.pushReplacement(context, newRoute);
+        Route newRoute = MaterialPageRoute(builder: (c) => const HomeScreen());
+        Navigator.pushReplacement(context, newRoute);
       });
     }
   }
